@@ -1,0 +1,44 @@
+.photo{
+    /* Rectangle 27 */
+
+position: absolute;
+width: 581.8px;
+height: 316px;
+left: 340px;
+top: 379px;
+
+background: #D9D9D9;
+border-radius: 8px;
+
+}
+.title{
+/* 배가 고파요 */
+
+position: absolute;
+width: 88px;
+height: 21px;
+left: 340px;
+top: 711px;
+
+font-family: 'Noto Sans KR';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 23px;
+/* or 130% */
+display: flex;
+align-items: center;
+color: #000000;
+
+}
+.like{
+    /* 좋아요 개수 */
+
+position: absolute;
+width: 49px;
+height: 14px;
+left: 873px;
+top: 715px;
+
+
+}
