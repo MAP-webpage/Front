@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+.logo {
+    width: 101px;
+    height: 41px;
+    top: 23px;
+    left: 705px;
+}
+
+.createAccount-box {
+    width: 450px;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-field1 {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #B3B3B3;
+    font-size: 13px;
+}
+
+.input-field1:first-child {
+    border-radius: 8px 8px 0 0;
+    border-bottom: none;
+}
+
+.input-field1:last-child {
+    border-radius: 0 0 8px 8px;
+    border-top: none;
+    margin-bottom: 10px;
+}
+
+.input-field2 {
+    
+    width: 100%;
+    height: 50px;
+    border: 1px solid #B3B3B3;
+    font-size: 13px;
+}
+
+.input-field2:first-child {
+    border-radius: 8px 8px 0 0;
+    border-bottom: none;
+}
+
+.input-field2:last-child {
+    border-radius: 0 0 8px 8px;
+    border-top: none;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 876.81px;
+    height: 48.81px;
+    text-align: center;
+    font-size: 14px;
+    color: #888888;
+}
+
+.request-button{
+    width: 100%;
+    height: 50px;
+    background-color: #3A2CFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+
+}
