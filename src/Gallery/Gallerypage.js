@@ -2,14 +2,16 @@ import { useEffect, useState } from "react";
 import Photo from "./component/Photo";
 import styles from "./Gallerypage.module.css";
 
-function Gallerypage() {
-  const [photos, setClickedImage] = useState([]);
+function Gallerypage({연도}) {
+  const [photos, setPhotos] = useState([]);
   //백에서 받아오기
 
     return ( 
       <div>
-        <div >MAP 갤러리</div>
-        <div className={styles.years}>2025</div> 
+        <div className={styles.title}>MAP 갤러리</div>
+        <hr className={styles.baseline} />
+        <hr className={styles.topline} />
+        <div className={styles.years}>2025{연도}</div> 
         <div>
           <Photo/>
           </div>
@@ -20,4 +22,3 @@ function Gallerypage() {
   
   export default Gallerypage;
 
-  //2025 변수로 변경 필요
