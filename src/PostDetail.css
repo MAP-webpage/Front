@@ -1,6 +1,7 @@
 .post-container {
     max-width: 800px;
     margin: 0 auto;
+    flex-direction: column;
   }
   
   .back-button {
@@ -13,8 +14,28 @@
   }
   
   .post-title {
-    font-size: 1.8rem;
-    font-weight: bold;
+  /* 배가 고파요 */
+
+position: absolute;
+width: 213px;
+height: 53px;
+left: 853px;
+top: 294px;
+
+font-family: 'Noto Sans KR';
+font-style: normal;
+font-weight: 500;
+font-size: 44px;
+line-height: 53px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+inline-size: max-content;
+    
   }
   
   .post-date {
@@ -24,9 +45,20 @@
   
   .post-content {
     margin-top: 10px;
+    flex: 1;
   }
   
   .comments-card {
+    /* 댓글창 */
+
+position: absolute;
+width: 936px;
+height: 785px;
+left: 492px;
+top: 1220px;
+
+
+    margin-top: 20px;
     margin-top: 30px;
   }
   
@@ -59,4 +91,58 @@
   .comment-button {
     width: 100%;
   }
-  
+  .page-title {
+    /* 자유게시판 */
+
+position: absolute;
+width: 111px;
+height: 29px;
+left: 340px;
+top: 180px;
+
+font-family: 'Noto Sans KR';
+font-style: normal;
+font-weight: 350;
+font-size: 24px;
+line-height: 29px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #000000;
+inline-size: max-content;
+
+  }
+.freeboard-post-title{
+  /* 배가 고파요 */
+
+position: absolute;
+width: 88px;
+height: 21px;
+left: 340px;
+top: 674px;
+
+font-family: 'Noto Sans KR';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 23px;
+/* or 130% */
+display: flex;
+align-items: center;
+
+color: #000000;
+inline-size: max-content;
+
+}
+.write-comment-card{
+  /* 댓글 쓰기 */
+
+position: absolute;
+width: 868.34px;
+height: 234.2px;
+left: 526px;
+top: 1744.6px;
+
+
+}

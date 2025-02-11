@@ -70,6 +70,7 @@ const PostDetail = () => {
   if (!post) return <p>게시물을 찾을 수 없습니다.</p>;
 
   return (
+    
     <div className="post-container">
       <Button onClick={() => navigate('/')} className="back-button">← 뒤로가기</Button>
 
