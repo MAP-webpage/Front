@@ -1,0 +1,33 @@
+.freeboard-select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.freeboard-file-upload {
+  margin-top: 10px;
+}
+
+.freeboard-image-preview {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.freeboard-post-thumbnail {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.freeboard-post-meta {
+  font-size: 0.9rem;
+  color: gray;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
