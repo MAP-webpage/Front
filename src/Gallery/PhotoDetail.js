@@ -8,12 +8,19 @@ function PhotoDetail  ({제목}) {
 
     return (
         <div className={secondstyles.PhotoDetailContainer}>
-            <div className={secondstyles.PhotoDetailTitleContainer}>
+
+            {/*타이틀 컨테이너*/}
+            <div className={secondstyles.PhotoDetailTitleContainer}> 
                 <div className={secondstyles.DetailGallery}>갤러리</div>
                 <div className={secondstyles.DetailTitle}>제목{제목}</div>
             </div>
+
+            {/*이미지 컨테이너*/}
             <div className={secondstyles.PhotoDetailImageContainer}>
+                
             </div>
+
+          
         </div>
     )
 }

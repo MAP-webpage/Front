@@ -1,0 +1,245 @@
+
+
+.postContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    flex-direction: column;
+    display: flex;
+    
+  }
+  
+  .backButton {
+    margin-bottom: 20px;
+  }
+
+  .free{
+/* 자유게시판 */
+
+position: absolute;
+width: 83px;
+height: 22px;
+left: 918px;
+top: 256px;
+
+font-family: 'Noto Sans KR';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #C8C8C8;
+inline-size: max-content;
+
+
+
+  }
+  
+  .postCard {
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .postTitle {
+/* 포스트 제목 */
+
+
+position: absolute;
+width: 213px;
+height: 53px;
+left: 50%;
+top: 294px;
+transform: translateX(-50%);
+font-family: 'Noto Sans KR';
+font-style: normal;
+font-weight: 500;
+font-size: 44px;
+line-height: 53px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+
+inline-size: max-content;
+
+
+  }
+  
+  .authorId{
+/* 21 홍길동 */
+
+position: absolute;
+width: 84px;
+height: 23px;
+left: 530px;
+top: 418px;
+
+font-family: 'Noto Sans KR';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 21px;
+/* or 116% */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+inline-size: max-content;
+
+  }
+  .postDate {
+  /* ・2025.02.24 */
+
+position: absolute;
+width: 107px;
+height: 23px;
+left: 610px;
+top: 418px;
+
+font-family: 'Noto Sans KR';
+font-style: normal;
+font-weight: 100;
+font-size: 18px;
+line-height: 21px;
+/* or 116% */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #C8C8C8;
+
+
+
+  }
+  
+  .likeButton {
+      
+  /* 좋아요 개수 */
+/* 좋아요 개수 */
+
+position: absolute;
+width: 56px;
+height: 16px;
+left: 1372px;
+top: 425px;
+
+
+
+  }
+  
+
+
+  .postContent {
+    margin-top: 20px;
+    top: 550px;
+    left: 530px;
+
+
+    position: absolute;
+    
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 20px;
+    line-height: 1.8; /* 가독성을 위해 줄 간격 조절 */
+    color: #333;
+    
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  
+
+  
+  .commentsCard {
+    /* 댓글창 */
+
+    max-width: 800px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 30px; /* 게시글과 댓글 사이 여백 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-height: 150px; 
+
+
+    margin-top: 20px;
+    margin-top: 30px;
+  }
+  
+  .comment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  .commentText {
+    flex-grow: 1;
+  }
+  
+  .deleteCommentButton {
+    background-color: red;
+    color: white;
+  }
+  
+  .comment-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .commentButton {
+    width: 100%;
+  }
+ 
+.writeCommentCard{
+  /* 댓글 쓰기 */
+
+  max-width: 800px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 30px;
+  margin-top: 10px; /* 게시글과 댓글 사이 여백 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+
+
+}
+.postbaseline{
+/* Line 9 */
+
+position: absolute;
+width: 936px;
+height: 0px;
+left: 492px;
+top: 471px;
+
+border: 1px solid #949494;
+margin-bottom: 20px;
+
+}
+.posttopline{
+
+/* Line 6 */
+
+position: absolute;
+width: 34.75px;
+height: 0px;
+left: 492px;
+top: 471px;
+
+border: 1px solid #000000;
+
+}

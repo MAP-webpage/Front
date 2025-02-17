@@ -4,7 +4,7 @@ import { Card, CardContent } from './components/ui/Card';
 import { Button } from './components/ui/Button';
 import { Input } from './components/ui/Input';
 import LikeButton from './components/ui/LikeButton';
-import './PostDetail.css';
+import styles from './PostDetail.module.css';
 
 const PostDetail = () => {
   const { postId } = useParams(); // URL에서 postId 가져오기
@@ -23,7 +23,7 @@ const PostDetail = () => {
       setPost(foundPost);
       setComments(foundPost.comments || []);
     }
-  }, [postId]);
+  }, [postId]); 
 
   // 댓글 작성
   const handleAddComment = () => {
@@ -67,60 +67,71 @@ const PostDetail = () => {
     navigate('/'); // 삭제 후 게시판으로 이동
   };
 
-  if (!post) return <p>게시물을 찾을 수 없습니다.</p>;
+
+
+  if (!post) return <p>게시된 글이 없습니다.</p>;
 
   return (
-    
-    <div className="post-container">
-      <Button onClick={() => navigate('/')} className="back-button">← 뒤로가기</Button>
-
-      <Card className="post-card">
+  
+    <div className={styles.postContainer}>
+      <Button onClick={() => navigate('/')} className={styles.backButton}>← 뒤로가기</Button>
+   
+      <Card className={styles.postCard}>
         <CardContent>
-          <h1 className="post-title">{post.title}</h1>
-          <p className="post-date">{post.date}</p>
-          <LikeButton postId={post.id} initialLikes={post.likes} />
-          <p className="post-content">{post.content}</p>
+          <div className={styles.postTitleContainer}>
+            <p className={styles.free}>자유게시판</p>
+            <h1 className={styles.postTitle}>{post.title}</h1>
+          </div>
+          <p className={styles.authorId}>작성자: {post.authorId}</p>
+          <p className={styles.postDate}>{post.date}</p>
+          <LikeButton className={styles.likeButton}postId={post.id} initialLikes={post.likes} />
+          <hr className={styles.postbaseline} />
+          <hr className={styles.posttopline} />
+
+          <p className={styles.postContent}>{post.content}</p>
           {post.authorId === currentUser && ( // 게시물 작성자만 삭제 버튼 표시
-            <Button onClick={handleDeletePost} className="delete-post-button">게시물 삭제</Button>
+            <Button onClick={handleDeletePost} className={styles.deletePostButton}>게시물 삭제</Button>
           )}
         </CardContent>
       </Card>
 
       {/* 댓글 섹션 */}
-      <Card className="comments-card">
-        <CardContent>
-          <h2 className="comments-title">댓글</h2>
-          {comments.length === 0 ? (
-            <p className="no-comments">아직 댓글이 없습니다.</p>
-          ) : (
-            comments.map(comment => (
-              <div key={comment.id} className="comment">
-                <p className="comment-text">{comment.text}</p>
-                {comment.authorId === currentUser && ( // 댓글 작성자만 삭제 가능
-                  <Button onClick={() => handleDeleteComment(comment.id, comment.authorId)} className="delete-comment-button">
-                    삭제
-                  </Button>
-                )}
-              </div>
-            ))
-          )}
-        </CardContent>
-      </Card>
 
-      {/* 댓글 작성 */}
-      <Card className="write-comment-card">
-        <CardContent>
-          <Input 
-            placeholder="댓글을 입력하세요" 
-            value={newComment} 
-            onChange={(e) => setNewComment(e.target.value)} 
-            className="comment-input"
-          />
-          <Button onClick={handleAddComment} className="comment-button">
-            작성
-          </Button>
-        </CardContent>
-      </Card>
+        <Card className={styles.commentsCard}>
+          <CardContent>
+            <h2 className={styles.commentsTitle}>댓글</h2>
+            {comments.length === 0 ? (
+              <p className={styles.noComments}>아직 댓글이 없습니다.</p>
+            ) : (
+              comments.map(comment => (
+                <div key={comment.id} className="comment">
+                  <p className={styles.commentText}>{comment.text}</p>
+                  {comment.authorId === currentUser && ( // 댓글 작성자만 삭제 가능
+                    <Button onClick={() => handleDeleteComment(comment.id, comment.authorId)} className={styles.deleteCommentButton}>
+                      삭제
+                    </Button>
+                  )}
+                </div>
+              ))
+            )}
+          </CardContent>
+        </Card>
+
+        {/* 댓글 작성 */}
+        <Card className={styles.writeCommentCard}>
+          <CardContent>
+            <Input 
+              placeholder="댓글을 입력하세요" 
+              value={newComment} 
+              onChange={(e) => setNewComment(e.target.value)} 
+              className={styles.commentInput}
+            />
+            <Button onClick={handleAddComment} className={styles.commentButton}>
+              작성
+            </Button>
+          </CardContent>
+        </Card>
+      
     </div>
   );
 };
