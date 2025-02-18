@@ -12,7 +12,6 @@ function App() {
     <Router>
       <Routes>
         <Route index element={<Mainpage />} />
-        <Route index element={<FreeBoard />} />
         <Route path="/freeBoard" element={<FreeBoard />} />
         <Route path="/create" element={<CreatePost />} />
         <Route path="/post/:postId" element={<PostDetail />} />
