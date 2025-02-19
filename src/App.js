@@ -5,7 +5,8 @@ import FreeBoard from "./Freeboard";
 import CreatePost from "./CreatePost";
 import PostDetail from "./PostDetail";
 import PhotoDetail from "./Gallery/PhotoDetail";
-import Calenderpage from "./Calender/Calenderpage";
+import Calenderpage from "./Calendar/Calendarpage";
+import MyCalendar from './Calendar/MyCalendar';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Route path="/post/:postId" element={<PostDetail />} />
         <Route path="/gallerypage" element={<Gallerypage />} />
         <Route path="/gallerypage/detail" element={<PhotoDetail/>} />
-        <Route path="/calenderpage" element={<Calenderpage/>} />
+        <Route path="/calendarpage" element={<MyCalendar/>} />
         </Routes>
     </Router>
   );

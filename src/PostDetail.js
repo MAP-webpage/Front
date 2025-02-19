@@ -76,29 +76,40 @@ const PostDetail = () => {
     <div className={styles.postContainer}>
       <Button onClick={() => navigate('/')} className={styles.backButton}>← 뒤로가기</Button>
    
+      {/*게시글 카드*/}
       <Card className={styles.postCard}>
         <CardContent>
+          {/*게시글 제목+카테고리*/}
           <div className={styles.postTitleContainer}>
             <p className={styles.free}>자유게시판</p>
             <h1 className={styles.postTitle}>{post.title}</h1>
           </div>
+
+        {/*작성자+날짜*/}
           <p className={styles.authorId}>작성자: {post.authorId}</p>
           <p className={styles.postDate}>{post.date}</p>
           <LikeButton className={styles.likeButton}postId={post.id} initialLikes={post.likes} />
+      
+          
+
+          {/*구분선선*/}
+          <div className={styles.postlines}>
           <hr className={styles.postbaseline} />
           <hr className={styles.posttopline} />
+          </div>
 
+          {/*게시글 내용*/}
           <p className={styles.postContent}>{post.content}</p>
+
           {post.authorId === currentUser && ( // 게시물 작성자만 삭제 버튼 표시
             <Button onClick={handleDeletePost} className={styles.deletePostButton}>게시물 삭제</Button>
           )}
-        </CardContent>
-      </Card>
+         </CardContent>
+        </Card>
 
-      {/* 댓글 섹션 */}
-
-        <Card className={styles.commentsCard}>
-          <CardContent>
+        {/* 댓글 목록 */}
+        <Card className={styles.commentsContainer}>
+          <CardContent className={styles.commentsCard}>
             <h2 className={styles.commentsTitle}>댓글</h2>
             {comments.length === 0 ? (
               <p className={styles.noComments}>아직 댓글이 없습니다.</p>
@@ -131,6 +142,7 @@ const PostDetail = () => {
             </Button>
           </CardContent>
         </Card>
+       
       
     </div>
   );
