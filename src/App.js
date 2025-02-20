@@ -7,6 +7,7 @@ import PostDetail from "./PostDetail";
 import PhotoDetail from "./Gallery/PhotoDetail";
 import Calenderpage from "./Calendar/Calendarpage";
 import MyCalendar from './Calendar/MyCalendar';
+import MyPage from "./MyPage/MyPage";
 
 function App() {
   return (
@@ -19,6 +20,12 @@ function App() {
         <Route path="/gallerypage" element={<Gallerypage />} />
         <Route path="/gallerypage/detail" element={<PhotoDetail/>} />
         <Route path="/calendarpage" element={<MyCalendar/>} />
+
+
+
+        <Route path="/mypage" element={<MyPage />} />  {/* ✅ MyPage도 경로 추가 */}
+
+
         </Routes>
     </Router>
   );
