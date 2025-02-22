@@ -22,7 +22,11 @@ const ProfileHeader = ({ userInfo }) => {
         {/* 수정 버튼 */}
         <label className='EditIcon'>
           <img src={editIcon} alt="EDIT" />
-          <input type="file" accept="image/*" onChange={handleImageChange} />
+          <input 
+            type="file" 
+            accept="image/*" 
+            onChange={handleImageChange} 
+          />
         </label>
       </div>
 
