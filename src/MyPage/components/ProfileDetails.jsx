@@ -16,7 +16,7 @@ const PasswordChangeModal = ({ onClose, userInfo, setUserInfo }) => {
     setPasswordInputs({ ...passwordInputs, [name]: value });
   };
 
-  // gpt
+  // gpt 비밀번호 설정 ( 6~20자, 최소1개 대문자, 1개 특수문자 포함 )
   const validatePassword = (password) => {
     const lengthCheck = password.length >= 6 && password.length <= 20;
     const specialCharCheck = /[!@#$%^&*(),.?":{}|<>]/.test(password);

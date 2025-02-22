@@ -15,7 +15,7 @@ const LogoutButton = () => {
     alert("(App.jsx 미연동) navigate 기능이 아직 구현되지 않았습니다 😭");
   } 
   const onClickDeleteAccount = async () => {
-    const confirmDelete = window.confirm("계정을 삭제하시겠습니까? 삭제된 계정은 복구할 수 없습니다."); // 한 번 더 확인
+    const confirmDelete = window.confirm("계정을 삭제하시겠습니까? 삭제된 계정은 복구할 수 없습니다."); 
     if (!confirmDelete) return;
 
     try {
@@ -27,7 +27,7 @@ const LogoutButton = () => {
 
       if (response.ok) {
         alert("회원 탈퇴가 완료되었습니다.");
-        // navigate("/"); // 홈 화면으로 이동ㅇ
+        // navigate("/"); 홈 화면으로 이동 구현은 못함.
       } else {
         const data = await response.json();
         alert(`회원 탈퇴 실패: ${data.message}`);
@@ -37,8 +37,6 @@ const LogoutButton = () => {
       console.error("회원 탈퇴 오류:", error);
     }
   };
-
-
 
   return (
     <div className='LogoutButton'>

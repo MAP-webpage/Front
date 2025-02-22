@@ -7,7 +7,6 @@ import projectMapLogo from "./image/project_maplogo.png";
 // props 미구현, App.jsx 에서 받아와야함
 function MyPage ({ userInfo, setUserInfo }) {
 
-
   return (
     <div className='MyPage'>
       <div className='LogoWrapper'>
