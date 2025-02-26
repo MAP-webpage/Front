@@ -32,6 +32,7 @@ const ProfileHeader = ({ userInfo }) => {
 
       <h2>{userInfo.name}</h2>
       <h4>{userInfo.entryYear}학번</h4>
+      
     </div>
   );
 };
