@@ -1,0 +1,7 @@
+.thumbnail {
+    width: 581.8px;
+    height:316px; /* ✅ 세로 크기 고정 */
+    object-fit: cover; /* ✅ 크기 맞추기 (자르기) */
+    border-radius: 8px; /* ✅ 모서리 둥글게 (선택 사항) */
+  }
+  

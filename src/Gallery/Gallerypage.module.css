@@ -1,28 +1,25 @@
 .years {
 /* 2025 */
+display: flex;
+position: relative;
+margin-top: 250px;
 
-position: absolute;
-width: 77px;
-height: 24px;
-left: 922px;
-top: 304px;
-
+justify-content: center;
 font-family: 'Noto Sans KR';
 font-style: normal;
 font-weight: 350;
 font-size: 32px;
 line-height: 23px;
 /* identical to box height, or 73% */
-display: flex;
-align-items: center;
-text-align: center;
+
+
 
 color: #000000;
 }
-.title {
+.gallerytitle {
     /* MAP 갤러리 */
 
-position: absolute;
+position: relative;
 width: 121px;
 height: 29px;
 left: 340px;
@@ -44,78 +41,39 @@ inline-size: max-content;
 .baseline {
     /* Line 5 */
 
-position: absolute;
+position: relative;
 width: 1239px;
 height: 0px;
-left: 340px;
-top: 245px;
+left: px;
+top: 208px;
 
 border: 1px solid #949494;
 
 }
 .topline{
-    /* Line 6 */
 
-position: absolute;
+
+position: relative;
 width: 46px;
 height: 0px;
-left: 340px;
-top: 245px;
+left: -596px;
+top: 198px;
 
 border: 1px solid #000000;
 
 }
-/* 갤러리 메인 컨테이너 */
-.gallery-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* 제목 스타일 */
-  .title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  /* 업로드 박스 */
-  .upload-box input {
-    display: block;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  /* 갤러리 2열 레이아웃 */
-  .gallery-grid {
+.postsContainer { 
+     position: relative;
+
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-  
-  /* 개별 이미지 아이템 */
-  .gallery-item {
-    position: relative;
-  }
-  
-  /* 대표 이미지 (메인 페이지에서 583x353로 강제 조정) */
-  .thumbnail {
-    width: 583px;
-    height: 353px;
-    object-fit: cover; /* 크롭하여 맞춤 */
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* 일반 갤러리 이미지 */
-  .gallery-img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
- 
+    grid-template-columns: repeat(2, 1fr); /* 2열 레이아웃 */
+    gap: 35px 0px; /* 간격 조정 */
+    justify-content: center;
+    align-items: start;
+    margin-top: 50px;
+    place-items: center;
+}
+.galleryContainer{
+    align-items: start;
+}
   

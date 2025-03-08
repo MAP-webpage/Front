@@ -1,67 +1,100 @@
-import { useEffect, useState } from "react";
-import Photo from "./component/Photo";
+import { useState } from "react";
 import styles from "./Gallerypage.module.css";
 import React from "react";
+import GalleryItem from "./GalleryItem";
+import UploadForm from "./UploadForm";
+
+// ✅ 더미 데이터
+const dummyUserPosts = [
+  {
+    id: 1,
+    title: "첫 번째 게시글",
+    images: ["https://source.unsplash.com/581x316/?nature,water"],
+    likes: 5,
+  },
+  {
+    id: 2,
+    title: "두 번째 게시글",
+    images: ["https://source.unsplash.com/581x316/?city,night"],
+    likes: 10,
+  },
+  {
+    id: 3,
+    title: "세 번째 게시글",
+    images: ["https://source.unsplash.com/581x316/?mountain"],
+    likes: 15,
+  },
+  {
+    id: 4,
+    title: "네 번째 게시글",
+    images: ["https://source.unsplash.com/581x316/?forest"],
+    likes: 8,
+  },
+];
+
+// ✅ 관리자용 더미 데이터 추가
+const dummyAdminPosts = [
+  ...dummyUserPosts,
+  {
+    id: 5,
+    title: "관리자 추가 게시글",
+    images: ["https://source.unsplash.com/581x316/?office"],
+    likes: 20,
+  },
+];
+
+const Gallery = () => {
+  const [isAdmin, setIsAdmin] = useState(true); // 관리자 여부 상태
+  const [posts, setPosts] = useState(isAdmin ? dummyAdminPosts : dummyUserPosts);
 
 
+  const handleUpload = (newPost) => {
+    setPosts((prevPosts) => [newPost, ...prevPosts]); // 업로드된 게시글 추가
+  };
 
-// 이미지 업로더 컴포넌트
-const Uploader = ({ onUpload }) => {
-  const handleUpload = (event) => {
-    const files = Array.from(event.target.files);
-    const newImages = files.map((file) => ({
-      id: URL.createObjectURL(file),
-      url: URL.createObjectURL(file),
-      name: file.name,
-    }));
-    onUpload(newImages);
+  // 게시글 수정
+  const handleEdit = (postId, newTitle) => {
+    setPosts((prevPosts) =>
+      prevPosts.map((post) =>
+        post.id === postId ? { ...post, title: newTitle } : post
+      )
+    );
+  };
+
+  //  게시글 삭제
+  const handleDelete = (postId) => {
+    setPosts((prevPosts) => prevPosts.filter((post) => post.id !== postId));
   };
 
   return (
-    <div className="upload-box">
-      <input type="file" accept="image/*" multiple onChange={handleUpload} />
-    </div>
-  );
-};
+    <>
+      <div className={styles.gallerytitle}>MAP 갤러리</div>
+      <hr className={styles.baseline} />
+      <hr className={styles.topline} />
+      <div className={styles.years}>2025</div> 
 
-// 갤러리 컴포넌트 (2열 레이아웃)//왜 안되지!
-const Gallery = ({ images, onDelete }) => {
-  return (
-    <div className="gallery-grid">
-      {images.map((image, index) => (
-        <div key={image.id} className="gallery-item">
-          {/* 대표 사진 (첫 번째 사진만 .thumbnail 적용) */}
-          <img
-            src={image.url}
-            alt={image.name}
-            className={index === 0 ? "thumbnail" : "gallery-img"}
-          />
-          <button className="delete-btn" onClick={() => onDelete(image.id)}>삭제</button>
+      <div className={styles.galleryContainer}>
+        {/*  관리자일 경우 업로드 폼 표시 */}
+        {isAdmin && <UploadForm onUpload={handleUpload} />}
+
+        <div className={styles.postsContainer}>
+          {posts.length > 0 ? (
+            posts.map((post) => (
+              <GalleryItem
+                key={post.id}
+                post={post}
+                isAdmin={isAdmin}
+                onEdit={handleEdit}
+                onDelete={handleDelete} // ✅ 삭제 기능 추가
+              />
+            ))
+          ) : (
+            <p className={styles.noPosts}>게시글이 없습니다.</p>
+          )}
         </div>
-      ))}
-    </div>
+      </div>
+    </>
   );
 };
 
-// 메인 갤러리 페이지
-const GalleryPage = () => {
-  const [images, setImages] = useState([]);
-
-  const handleNewImages = (newImages) => {
-    setImages((prev) => [...prev, ...newImages]);
-  };
-
-  const handleDelete = (imageId) => {
-    setImages((prev) => prev.filter((image) => image.id !== imageId));
-  };
-
-  return (
-    <div className="gallery-container">
-      <h2 className="title">Image Gallery</h2>
-      <Uploader onUpload={handleNewImages} />
-      <Gallery images={images} onDelete={handleDelete} />
-    </div>
-  );
-};
-
-export default GalleryPage;
+export default Gallery;
