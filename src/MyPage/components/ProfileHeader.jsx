@@ -17,7 +17,11 @@ const ProfileHeader = ({ userInfo }) => {
   return (
     <div className='ProfileHeader'>
       <div className='ProfileContainer'>
-        <img src={profileImage} alt="PROFILE" className='ProfileImage' />
+        <img 
+          src={profileImage} 
+          alt="PROFILE" 
+          className='ProfileImage' 
+        /> 
 
         {/* 수정 버튼 */}
         <label className='EditIcon'>

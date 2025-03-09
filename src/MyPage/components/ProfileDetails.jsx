@@ -78,8 +78,14 @@ const PasswordChangeModal = ({ onClose, userInfo, setUserInfo }) => {
 const ProfileWrapper = ({ icon, label, content, showButton, setIsModalOpen }) => {
   return (
     <div className='ProfileWrapper'>
-      <img src={icon} alt={`${label} icon`} className='ProfileIcon' />
-      <div className="ProfileText">{content}</div>
+      <img 
+        src={icon} 
+        alt={`${label} icon`} 
+        className='ProfileIcon' 
+      />
+      <div className="ProfileText">
+        {content}
+      </div>
       {showButton && <button className='ChangePasswordButton' onClick={() => setIsModalOpen(true)}>변경</button>}
     </div>
   );
