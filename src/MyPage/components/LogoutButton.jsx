@@ -15,6 +15,7 @@ const LogoutButton = () => {
     console.log("로그아웃 버튼이 클릭");
     alert("(App.jsx 미연동) navigate 기능이 아직 구현되지 않았습니다 😭");
   }
+  
   const onClickDeleteAccount = async () => {
     const confirmDelete = window.confirm("계정을 삭제하시겠습니까? 삭제된 계정은 복구할 수 없습니다."); 
     if (!confirmDelete) return;
