@@ -6,9 +6,8 @@ import projectMapLogo from "./image/project_maplogo.png";
 
 // props 미구현, App.jsx 에서 받아와야함
 function MyPage ({ userInfo, setUserInfo }) {
-
   /*
-    사용자 정보 임시 객체 - 
+    사용자 정보 임시로 만든 객체
     const [userInfo, setUserInfo] = useState({
       id: "TempId1234",
       name: "임시이름",
@@ -17,7 +16,6 @@ function MyPage ({ userInfo, setUserInfo }) {
       entryYear: "24",
     });
   */
- 
   return (
     <div className='MyPage'>
       <div className='LogoWrapper'>
