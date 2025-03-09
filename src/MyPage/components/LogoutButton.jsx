@@ -1,3 +1,4 @@
+import axios from 'axios';
 import './LogoutButton.css'
 // import { useNavigate } from 'react-router-dom'
 // import { useState } from 'react'
@@ -19,7 +20,7 @@ const LogoutButton = () => {
     if (!confirmDelete) return;
 
     try {
-      const response = await fetch("https://api.example.com/delete-account", {
+      const response = await axios("https://api.example.com/delete-account", {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         credentials: "include", // 쿠키 기반 로그인 정보 포함 (필요하면)
