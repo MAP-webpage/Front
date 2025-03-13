@@ -1,47 +1,56 @@
 import React, { useState, useEffect } from 'react';
-import { Card, CardContent } from './components/ui/Card';
-import { Button } from './components/ui/Button';
-import { Input } from './components/ui/Input';
+import { Card, CardContent } from '../components/ui/Card';
+import { Button } from '../components/ui/Button';
+import { Input } from '../components/ui/Input';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import LikeButton from './components/ui/LikeButton';
-import './Freeboard.css';
+import LikeButton from '../components/ui/LikeButton';
+import { Header } from '../components/ui/Header';
+import apiClient from '../api/apiClient';
+// import axios from 'axios';
+import './Freeboardpage.css';
 
 const categories = ['전체', '공지', '질문', '잡담'];
 
-const FreeBoard = () => {
+const FreeBoardpage = () => {
   const navigate = useNavigate();
   const [posts, setPosts] = useState(() => {
-    const savedPosts = localStorage.getItem('freeboardPosts');
-    return savedPosts ? JSON.parse(savedPosts) : [];
   });
   const [selectedCategory, setSelectedCategory] = useState('전체');
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    const savedPosts = localStorage.getItem('freeboardPosts');
-    if (savedPosts) {
-      setPosts(JSON.parse(savedPosts));
+    fetchPosts();
+  }, [selectedCategory, searchQuery]);
+
+  const fetchPosts = async () => {
+    let url = `/free-board/list?searchKeyword=${searchQuery}`;
+    if (selectedCategory !== '전체') {
+      url += `&category=${selectedCategory}`;
     }
-  }, []);
 
-  useEffect(() => {
-    localStorage.setItem('freeboardPosts', JSON.stringify(posts));
-  }, [posts]);
+    try {
+      const response = await apiClient.get(url);
+      if (response.status === 200) {
+        setPosts(response.data.content || []);
+      }
+    } catch (error) {
+      console.error('게시글 불러오기 실패:', error);
+    }
+  };
 
-  const handleViewPost = (id) => {
-    setPosts(prevPosts =>
-      prevPosts.map(post =>
-        post.id === id ? { ...post, views: post.views + 1 } : post
-      )
-    );
+  // 서버에서 조회수 증가함.
+  const handleViewPost = async (boardId) => {
+    try {
+      await apiClient.get(`/free-board/view/${boardId}`);
+      const response = await apiClient.get(`/free-board/view/${boardId}`);
 
-    const updatedPosts = posts.map(post =>
-      post.id === id ? { ...post, views: post.views + 1 } : post
-    );
-    localStorage.setItem('freeboardPosts', JSON.stringify(updatedPosts));
-
-    navigate(`/post/${id}`);
+      if (response.status === 200) { // 성공
+        navigate(`/post/${boardId}`);
+      }
+    } catch (error) {
+      console.error('게시글 조회 실패:', error);
+    }
   };
 
   const filteredPosts = posts.filter(post =>
@@ -51,21 +60,12 @@ const FreeBoard = () => {
 
   return (
     <div className="freeboard-container">
-      {/* 헤더 */}
-      <header className="freeboard-header">
-        <div className="logo">MAP</div>
-        <nav className="nav-links">
-          <span onClick={() => navigate('/notice')}>공지</span>
-          <span onClick={() => navigate('/calender')}>캘린더</span>
-          <span onClick={() => navigate('/gallerypage')}>갤러리</span>
-        </nav>
-        <div className="user-icon" onClick={() => navigate('/mypage')}>👤</div>
-      </header>
+      <Header />
 
       {/* 자유게시판 제목 */}
       <h1 className="page-title">자유게시판</h1>
 
-      {/* 카테고리 선택 */}
+      {/* 카테고리 필터 */}
       <div className="category-filter">
         {categories.map(category => (
           <span
@@ -158,4 +158,4 @@ const FreeBoard = () => {
   );
 };
 
-export default FreeBoard;
+export default FreeBoardpage;
