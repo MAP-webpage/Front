@@ -16,6 +16,7 @@ function MyPage ({ userInfo, setUserInfo }) {
       entryYear: "24",
     });
   */
+
   return (
     <div className='MyPage'>
       <div className='LogoWrapper'>

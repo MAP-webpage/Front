@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항 작성</title>
+    <link rel="stylesheet" href="write.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" class="logo">
+        <nav>
+            <ul>
+                <li>공지</li>
+                <li>자유게시판</li>
+                <li>캘린더</li>
+                <li>갤러리</li>
+            </ul>
+        </nav>
+        <button class="user-icon">👤</button>
+    </header>
+    <form class="noticeForm">
+        <input type="text" class="title" required placeholder="제목을 입력해 주세요">
+        <textarea class="content" rows="4" required placeholder="내용을 입력하세요."></textarea>
+        <button class="submit">작성 완료</button>
+    </form>
+
+    <div id="notices"></div>
+
+    <script src="write.js"></script>
+</body>
+</html>

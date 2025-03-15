@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    width: 83px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.active {
+    font-weight: bold;
+    border-bottom: 2px solid black;
+}
+
+.user-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+h2 {
+    text-align: left;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.notice-list {
+    border-top: 1px solid #ddd;
+}
+
+.notice-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.notice-item:hover {
+    background-color: #f9f9f9;
+}
+
+.notice-category {
+    font-weight: bold;
+    color: blue;
+    margin-right: 10px;
+}
+
+.notice-title {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.notice-date {
+    color: #888;
+}
+
+.pagination {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.pagination span {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 10px;
+    color: #888888;
+    white-space: nowrap;
+}
+
+.notice-item {
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+
+.notice-category {
+    color: #7E7CA6;
+    font-weight: 500; 
+    font-size: 18px;
+    line-height: 15px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    white-space: nowrap;   
+}
+
+.notice-title {
+    font-weight: 400; 
+    font-size: 18px;
+    line-height: 15px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    margin-left: 50px;
+    margin-right: 50px;
+    white-space: nowrap;
+    flex-grow: 1;
+    margin-right: 10px;
+    min-width: 0;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    overflow: hidden;      /* 넘치는 부분 숨김 */
+    text-overflow: ellipsis;
+}
+
+.notice-date {
+    color: grey;
+    font-weight: 350;
+    font-size: 18px;
+    line-height: 15px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    white-space: nowrap;   
+}

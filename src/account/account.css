@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+.logo {
+    width: 101px;
+    margin-bottom: 20px;
+}
+
+.createAccount-box {
+    width: 450px;
+    padding: 30px;
+    margin-bottom: 150px;
+    border-radius: 12px;
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.input-field {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #B3B3B3;
+    font-size: 14px;
+    padding-left: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.input-field:first-child {
+    border-radius: 8px 8px 0 0;
+    border-bottom: none;
+}
+
+.input-field:last-child {
+    border-radius: 0 0 8px 8px;
+    border-top: none;
+}
+
+.code-container {
+    display: flex;
+    width: 100%;
+}
+
+.code-container input {
+    flex: 1;
+}
+
+.code-container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.code-input {
+    width: 100%;
+    padding-right: 90px;  /* 버튼 공간 확보 */
+    height: 50px;
+    border: 1px solid #B3B3B3;
+    border-radius: 0 0 8px 8px;
+    border-top: none;
+    font-size: 14px;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.verify-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 65px;
+    height: 40px;
+    background-color: #3A2CFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.error-border {
+    border: 2px solid red !important;
+}
+
+.error-text {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+
+.request-button {
+    width: 100%;
+    height: 50px;
+    background-color: #3A2CFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 10px;
+    color: #888888;
+    white-space: nowrap;
+}
