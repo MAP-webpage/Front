@@ -132,7 +132,7 @@ const FreeBoardpage = () => {
                       {post.views ?? 0}
                     </span>
 
-                    <LikeButton postId={post.id} initialLikes={post.likes} />
+                    <LikeButton postId={post.id} initialLikes={post.heartCount} refreshPosts={fetchPosts} />
                   </p>
                 </CardContent>
               </Card>
