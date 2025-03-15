@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
-import apiClient from '../api/apiClient'; // apiClient 클라이언트 추가
-// import axios from 'axios';
+import apiClient from '../../api/apiClient'; // apiClient 클라이언트 추가
 
 const LikeButton = ({ postId, initialLikes }) => {
-  const [likes, setLikes] = useState(initialLikes);
+  const [likes, setLikes] = useState(initialLikes || 0);
   const [liked, setLiked] = useState(false);
 
-  // 현재 로그인된 회원 ID (임시: localStorage에서 가져오기)
+  // 현재 로그인된 회원 ID (임시)
   const memberId = localStorage.getItem('memberId') || 'testUser';
 
   useEffect(() => {
@@ -28,11 +27,15 @@ const LikeButton = ({ postId, initialLikes }) => {
   const handleLike = async () => {
     try {
       if (!liked) {
-        await apiClient.post(`/free-board/like/${postId}/${memberId}`);
-        setLikes((prev) => prev + 1);
+        const response = await apiClient.post(`/free-board/like/${postId}/${memberId}`);
+        if (response.status === 200) {
+          setLikes((prev) => Number(prev) + 1);
+        }
       } else {
-        await apiClient.delete(`/free-board/like/${postId}/${memberId}`);
-        setLikes((prev) => prev - 1);
+        const response = await apiClient.delete(`/free-board/like/${postId}/${memberId}`);
+        if (response.status === 200) {
+          setLikes((prev) => Math.max(0, Number(prev) - 1));
+        }
       }
       setLiked((prev) => !prev);
     } catch (error) {
