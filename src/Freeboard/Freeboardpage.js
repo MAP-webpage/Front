@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import LikeButton from '../components/ui/LikeButton';
 import { Header } from '../components/ui/Header';
 import apiClient from '../api/apiClient';
-import './Freeboardpage.css';
+import './Freeboard.css';
 
 const categories = [
   { label: '전체', value: 'ALL' },

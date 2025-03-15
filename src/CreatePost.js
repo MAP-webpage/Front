@@ -4,7 +4,7 @@ import { Button } from './components/ui/Button';
 import { Input } from './components/ui/Input';
 import { Textarea } from './components/ui/Textarea';
 import { useNavigate } from 'react-router-dom';
-import './Freeboard/Freeboardpage.css';
+import './FreeBoard/Freeboard.css';
 
 const CreatePost = () => {
   const navigate = useNavigate();

@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Mainpage from "./Mainpage";
 import Gallerypage from "./Gallery/Gallerypage";
-import FreeBoardpage from "./Freeboard/Freeboardpage";
+import FreeBoardpage from "./FreeBoard/Freeboardpage";
 import CreatePost from "./CreatePost";
 import Calenderpage from "./Calendar/Calendarpage";
 import MyCalendar from './Calendar/MyCalendar';
 import MyPage from "./MyPage/MyPage";
-
+import SecretBoardpage from "./SecretBoard/Secretboardpage";
 import { useState } from "react";
 
   // 사용자 정보 임시 객체
@@ -25,6 +25,7 @@ function App() {
         <Route index element={<Mainpage />} />
         {/* <Route index element={<FreeBoardpage />} /> */}
         <Route path="/freeBoard" element={<FreeBoardpage />} />
+        <Route path="/secretBoard" element={<SecretBoardpage />} />
         <Route path="/create" element={<CreatePost />} />
         <Route path="/gallerypage" element={<Gallerypage />} />
         <Route path="/calendarpage" element={<MyCalendar/>} />
