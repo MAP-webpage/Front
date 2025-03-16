@@ -11,15 +11,21 @@ body {
 }
 
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
     border-bottom: 1px solid #ddd;
+    z-index: 1000;
 }
 
 .logo {
     width: 83px;
+    margin-bottom: 0;
 }
 
 nav ul {
@@ -28,7 +34,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 60px;
     cursor: pointer;
 }
 
@@ -44,17 +50,23 @@ nav ul li {
 
 main {
     max-width: 800px;
-    margin: 20px auto;
+    margin: 80px auto;
+    padding: 20px
 }
 
 h2 {
     text-align: left;
-    margin-bottom: 10px;
-    margin-left: 10px;
+    margin: 20px 0 10px;
 }
 
 .notice-list {
-    border-top: 1px solid #ddd;
+    margin-top: 60px;
+    position: fixed;
+    top: 60px;
+    left: 200px;
+    right: 200px;
+    background-color: #ffffff;
+    z-index: 999;
 }
 
 .notice-item {
@@ -63,6 +75,8 @@ h2 {
     padding: 15px;
     border-bottom: 1px solid #ddd;
     cursor: pointer;
+    align-items: center;
+    height: 70px;
 }
 
 .notice-item:hover {
@@ -85,8 +99,12 @@ h2 {
 }
 
 .pagination {
-    margin-top: 15px;
+    position: fixed;
+    margin-top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 14px;
+    z-index: 1000;
 }
 
 .pagination span {
@@ -94,35 +112,18 @@ h2 {
     cursor: pointer;
 }
 
-footer {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    font-size: 10px;
-    color: #888888;
-    white-space: nowrap;
-}
-
-.notice-item {
-    display: flex;
-    align-items: center;
-    height: 60px;
-}
-
 .notice-category {
     color: #7E7CA6;
-    font-weight: 500; 
+    font-weight: 500;
     font-size: 18px;
     line-height: 15px;
     letter-spacing: 0%;
     vertical-align: middle;
-    white-space: nowrap;   
+    white-space: nowrap;
 }
 
 .notice-title {
-    font-weight: 400; 
+    font-weight: 400;
     font-size: 18px;
     line-height: 15px;
     letter-spacing: 0%;
@@ -136,7 +137,6 @@ footer {
     line-height: 1;
     display: flex;
     align-items: center;
-    overflow: hidden;      /* 넘치는 부분 숨김 */
     text-overflow: ellipsis;
 }
 
@@ -147,5 +147,17 @@ footer {
     line-height: 15px;
     letter-spacing: 0%;
     vertical-align: middle;
-    white-space: nowrap;   
+    white-space: nowrap;
+}
+
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 10px;
+    color: #888888;
+    white-space: nowrap;
 }
